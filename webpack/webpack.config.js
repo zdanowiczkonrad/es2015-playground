@@ -6,11 +6,12 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.css$/, loader: "style!css" },
-            {test: /\.js$/, loader: 'babel-loader'}
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.js$/, loader: 'babel-loader'},
+            { test: /\.scss$/, loaders: ["style", "css", "sass"] }
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.json']
+        extensions: ['', '.js', '.json', '.css']
     }
 };
